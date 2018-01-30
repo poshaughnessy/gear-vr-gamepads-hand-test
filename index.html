@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Gear VR Gamepad Hand Test</title>
+  </head>
+  <body>
+    <div id="output">Awaiting result...</div>
+    <script>
+      var outputDiv = document.getElementById('output');
+      var gamepads = navigator.getGamepads();
+      outputDiv.innerHTML = gamepads;
+    </script>
+  </body>
+</html>
