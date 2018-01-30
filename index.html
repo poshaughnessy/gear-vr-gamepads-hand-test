@@ -9,7 +9,13 @@
     <script>
       var outputDiv = document.getElementById('output');
       var gamepads = navigator.getGamepads();
-      outputDiv.innerHTML = gamepads;
+      var output = '<ul>';
+      for (var i=0; i < gamepads.length; i++) {
+        var gamepad = gamepads[i];
+        output += '<li>' + JSON.stringify(gamepad) + '</li>';
+      }
+      output += '</ul>';
+      outputDiv.innerHTML = output;
     </script>
   </body>
 </html>
