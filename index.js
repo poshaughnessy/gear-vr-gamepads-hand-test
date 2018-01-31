@@ -1,13 +1,32 @@
 AFRAME.registerComponent('gamepad-test', {
-  schema: {},
+  schema: {
+    output: {default: '#output'}
+  },
   init: function () {
     
-    var outputElement = document.getElementById('output');
-    var gamepads = navigator.getGamepads();
+    this.el.addEventListener('click', function() {
+      var outputElement = document.querySelector(this.data.output);
+      var gamepads = navigator.getGamepads();
 
-    console.log('Gamepads', gamepads);
+      console.log('Gamepads', gamepads);
 
-    outputElement.setAttribute('text', JSON.stringify(gamepads));
+      outputElement.setAttribute('text', JSON.stringify(gamepads));
     
+    });
+
+  }
+});
+
+AFRAME.registerComponent('instructions', {
+  schema: {},
+  init: function() {
+    var scene = document.querySelector('a-scene');
+    if (scene.hasLoaded) {
+      this.updateInstructions();
+    }
+    scene.addEventListener('loaded', this.updateInstructions);
+  },
+  updateInstructions: function() {
+    this.el.setAttribute('text', 'Now "click" the button');
   }
 });

@@ -9,11 +9,16 @@
   </head>
   <body>
 
-    <h1>Enter VR using the Goggles icon</h1>
-
-    <a-scene gamepad-test>
+    <a-scene>
+      <a-camera>
+        <a-cursor fuse="true"></a-cursor>
+      </a-camera>
       <a-sky color="#ccccee"></a-sky>
+      <a-entity instructions text="Enter VR by pressing the goggles icon"></a-entity>
       <a-entity id="output" text="value: Awaiting result..."></a-entity>
+      <a-plane gamepad-test="output: #output" id="button" color="#0000ff" width="100" height="20">
+        <a-entity text="Get result"></a-entity>
+      </a-plane>
     </a-scene>
 
     <!--
