@@ -15,27 +15,12 @@
       </a-camera>
       <a-sky color="#ccccee"></a-sky>
       <a-entity instructions position="0 2.5 0" text="value: Enter VR by pressing the goggles icon; width: 8; align: center; color: #000;"></a-entity>
-      <a-entity id="output" position="0 1.5 0" text="value: Awaiting result...; width: 5; align: center; color: #000;"></a-entity>
+      <a-entity id="output" position="0 1.5 0" text="value: Gamepads: Awaiting result...; width: 5; align: center; color: #000;"></a-entity>
       <a-plane position="0 0 0" gamepad-test="output: #output" id="button" color="#3333ee" width="2" height="0.5">
         <a-entity text="value: Get result; width: 4; align: center;"></a-entity>
       </a-plane>
+      <a-entity gearvr-controls></a-entity>
     </a-scene>
 
-    <!--
-    <h3>Gamepads data:</h3>
-
-    <div id="output">Awaiting result...</div>
-    <script>
-      var outputDiv = document.getElementById('output');
-      var gamepads = navigator.getGamepads();
-      var output = '<ul>';
-      for (var i=0; i < gamepads.length; i++) {
-        var gamepad = gamepads[i];
-        output += '<li>' + JSON.stringify(gamepad) + '</li>';
-      }
-      output += '</ul>';
-      outputDiv.innerHTML = output;
-    </script>
-    -->
   </body>
 </html>

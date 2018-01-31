@@ -12,7 +12,7 @@ AFRAME.registerComponent('gamepad-test', {
 
       console.log('Gamepads', gamepads);
 
-      outputElement.setAttribute('text', 'value: ' + JSON.stringify(gamepads));
+      outputElement.setAttribute('text', 'value: Gamepads: ' + JSON.stringify(gamepads));
     
     });
 
