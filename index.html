@@ -1,10 +1,24 @@
 <!doctype html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gear VR Gamepad Hand Test</title>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="index.js"></script>
   </head>
   <body>
+
+    <h1>Enter VR using the Goggles icon</h1>
+
+    <a-scene gamepad-test>
+      <a-sky color="#ccccee"></a-sky>
+      <a-entity id="output" text="value: Awaiting result..."></a-entity>
+    </a-scene>
+
+    <!--
     <h3>Gamepads data:</h3>
+
     <div id="output">Awaiting result...</div>
     <script>
       var outputDiv = document.getElementById('output');
@@ -17,5 +31,6 @@
       output += '</ul>';
       outputDiv.innerHTML = output;
     </script>
+    -->
   </body>
 </html>
