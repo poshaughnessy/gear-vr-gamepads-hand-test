@@ -4,13 +4,15 @@ AFRAME.registerComponent('gamepad-test', {
   },
   init: function () {
     
+    var data = this.data;
+
     this.el.addEventListener('click', function() {
-      var outputElement = document.querySelector(this.data.output);
+      var outputElement = document.querySelector(data.output);
       var gamepads = navigator.getGamepads();
 
       console.log('Gamepads', gamepads);
 
-      outputElement.setAttribute('text', JSON.stringify(gamepads));
+      outputElement.setAttribute('text', 'value: ' + JSON.stringify(gamepads));
     
     });
 
@@ -21,12 +23,13 @@ AFRAME.registerComponent('instructions', {
   schema: {},
   init: function() {
     var scene = document.querySelector('a-scene');
-    if (scene.hasLoaded) {
-      this.updateInstructions();
-    }
-    scene.addEventListener('loaded', this.updateInstructions);
+    scene.addEventListener('enter-vr', this.updateInstructions.bind(this));
+    scene.addEventListener('exit-vr', this.resetInstructions.bind(this));
   },
   updateInstructions: function() {
-    this.el.setAttribute('text', 'Now "click" the button');
+    this.el.setAttribute('text', 'value: Now click the button;');
+  },
+  resetInstructions: function() {
+    this.el.setAttribute('text', 'value: Enter VR by pressing the goggles icon;');
   }
 });
