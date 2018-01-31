@@ -21,7 +21,7 @@ AFRAME.registerComponent('gamepad-test', {
         e.gamepad.index, e.gamepad.id,
         e.gamepad.buttons.length, e.gamepad.axes.length);
 
-      outputElement.setAttribute('text', 'value: Gamepad connected: ' + JSON.stringify(e.gamepad));
+      outputElement.setAttribute('text', 'value: Gamepad connected: ' + e.gamepad.id);
 
     });
 
